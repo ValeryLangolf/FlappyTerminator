@@ -1,12 +1,9 @@
 using System;
 
-public abstract class Bullet : ElementPool, IDeactivatable<Bullet>
+public abstract class Bullet : Element, IDeactivatable<Bullet>
 {
     public event Action<Bullet> Deactivated;
 
-    public override void Deactivate()
-    {
-        base.Deactivate();
+    public override void Deactivate() =>
         Deactivated?.Invoke(this);
-    }
 }

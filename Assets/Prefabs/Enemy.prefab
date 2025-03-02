@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 7639724850629407825}
   - component: {fileID: 7111621114718547412}
   - component: {fileID: 5877383056903780291}
-  - component: {fileID: 8455629074247219066}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -285,17 +284,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _mover: {fileID: 7111621114718547412}
   _collider: {fileID: 0}
-  _shooter: {fileID: 8455629074247219066}
   _delayBetweenShots: 1
---- !u!114 &8455629074247219066
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2915491736666008920}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 597007a556194f24c961eb8d7c6ef58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

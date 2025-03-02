@@ -1,19 +1,16 @@
 using UnityEngine;
 
-public class Shooter : MonoBehaviour
+public class Shooter
 {
-    private BulletPool _bulletPool;
+    private Pool<Bullet> _bulletPool;
 
-    public void InitBulletPool(BulletPool bulletPool)
-    {
-        _bulletPool = bulletPool;
-    }
+    public void SetBulletPool(Pool<Bullet> pool) =>
+        _bulletPool = pool;
 
-    public void Shoot()
+    public void Shoot(Transform transform)
     {
         Bullet bullet = _bulletPool.Get();
-        bullet.transform.position = transform.position;
+        bullet.SetPosition(transform.position);
         bullet.SetDirection(transform.up);
-        bullet.gameObject.SetActive(true);
     }
 }

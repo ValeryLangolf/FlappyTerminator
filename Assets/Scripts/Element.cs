@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class ElementPool : MonoBehaviour
+public abstract class Element : MonoBehaviour
 {
     [SerializeField] private Mover _mover;
     [SerializeField] private Collider2D _collider;    
@@ -8,18 +8,14 @@ public abstract class ElementPool : MonoBehaviour
     protected virtual void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent(out Wall _))
-        {
             Deactivate();
-        }
     }
 
-    public void SetDirection(Vector3 direction)
-    {
+    public abstract void Deactivate();
+
+    public void SetPosition(Vector2 position) =>
+        transform.position = position;
+
+    public void SetDirection(Vector3 direction) =>
         _mover.SetDirection(direction);
-    }
-
-    public virtual void Deactivate()
-    {
-        gameObject.SetActive(false);
-    }
 }

@@ -269,9 +269,6 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 626519622}
-  - {fileID: 1415799513}
-  - {fileID: 1055354868}
   - {fileID: 1917739338}
   m_Father: {fileID: 0}
   m_RootOrder: 3
@@ -451,51 +448,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &626519620
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 626519622}
-  - component: {fileID: 626519621}
-  m_Layer: 0
-  m_Name: EnemyPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &626519621
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626519620}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5552d035960758f469ef2888256df1e8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 5877383056903780291, guid: 22689a68d62f5fe4f91cffc01ba3662c, type: 3}
---- !u!4 &626519622
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 626519620}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 193875794}
-  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &675238436
 GameObject:
@@ -846,51 +798,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!1 &1055354866
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1055354868}
-  - component: {fileID: 1055354867}
-  m_Layer: 0
-  m_Name: EnemyBulletPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1055354867
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055354866}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e20c4614b8ce44640ac94a2f8673abef, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 8914222556852049710, guid: f10ee5b069cb7d54ab3bcb2f7abbf5db, type: 3}
---- !u!4 &1055354868
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1055354866}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 193875794}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166841445
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,51 +1132,6 @@ Transform:
   m_Father: {fileID: 675238437}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1415799512
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1415799513}
-  - component: {fileID: 1415799514}
-  m_Layer: 0
-  m_Name: PlayerBulletPool
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1415799513
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415799512}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 193875794}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1415799514
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1415799512}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1cd4fbff02f412944843e89144a7c7e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _prefab: {fileID: 140224902077155602, guid: 2dc13a39d5896704e9184d5ae1f85e86, type: 3}
 --- !u!1 &1503363051
 GameObject:
   m_ObjectHideFlags: 0
@@ -1358,8 +1220,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5615f358fdaa3594d9b6581180b039e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _enemyPool: {fileID: 626519621}
-  _bulletPool: {fileID: 1055354867}
+  _enemyPrefab: {fileID: 5877383056903780291, guid: 22689a68d62f5fe4f91cffc01ba3662c, type: 3}
+  _enemyBulletPrefab: {fileID: 8914222556852049710, guid: f10ee5b069cb7d54ab3bcb2f7abbf5db, type: 3}
   _spawnPointUp: {fileID: 681660209}
   _spawnPointDown: {fileID: 1503363052}
   _delayInSeconds: 3
@@ -1378,7 +1240,6 @@ GameObject:
   - component: {fileID: 2027450335}
   - component: {fileID: 2027450334}
   - component: {fileID: 2027450338}
-  - component: {fileID: 2027450339}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1477,7 +1338,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2027450331}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6cc9a2c475a3a28469f0284a9e8ca7f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 6f3f3db61ed52d445a80a9a1bd872ab2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _force: 5
@@ -1524,8 +1385,7 @@ MonoBehaviour:
   _rotator: {fileID: 2027450334}
   _tosser: {fileID: 2027450335}
   _inputSystem: {fileID: 1264663429}
-  _bulletPool: {fileID: 1415799514}
-  _shooter: {fileID: 2027450339}
+  _playerBulletPrefab: {fileID: 140224902077155602, guid: 2dc13a39d5896704e9184d5ae1f85e86, type: 3}
 --- !u!60 &2027450338
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1626,15 +1486,3 @@ PolygonCollider2D:
       - {x: 0.796875, y: -1.921875}
       - {x: 1.21875, y: -1.640625}
   m_UseDelaunayMesh: 0
---- !u!114 &2027450339
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2027450331}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 597007a556194f24c961eb8d7c6ef58a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

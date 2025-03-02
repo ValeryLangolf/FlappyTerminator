@@ -9,19 +9,15 @@ public class PlayerRotator : MonoBehaviour
     private Quaternion _minimumRotation;
     private Quaternion _maximumRotation;
 
-    private void Start()
+    private void Awake()
     {
         _minimumRotation = Quaternion.Euler(0, 0, _minimumRotationZ);
         _maximumRotation = Quaternion.Euler(0, 0, _maximumRotationZ);
     }
 
-    private void Update()
-    {
+    private void Update() =>
         transform.rotation = Quaternion.Lerp(transform.rotation, _minimumRotation, _speed * Time.deltaTime);
-    }
 
-    public void RotateUp()
-    {
+    public void RotateUp() =>
         transform.rotation = _maximumRotation;
-    }
 }

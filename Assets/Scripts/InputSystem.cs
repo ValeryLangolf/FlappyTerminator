@@ -12,13 +12,9 @@ public class InputSystem : MonoBehaviour
     private void Update()
     {
         if(Input.GetKeyDown(_jump))
-        {
             JumpButtonPressed?.Invoke();
-        }
 
         if (Input.GetKeyDown(_shot))
-        {
             ShotButtonPressed?.Invoke();
-        }
     }
 }

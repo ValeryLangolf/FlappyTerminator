@@ -3,14 +3,17 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField] private PlayerRotator _rotator;
-    [SerializeField] private PlayerTosser _tosser;
+    [SerializeField] private Jumper _tosser;
     [SerializeField] private InputSystem _inputSystem;
-    [SerializeField] private PlayerBulletPool _bulletPool;
-    [SerializeField] private Shooter _shooter;
+    [SerializeField] private PlayerBullet _playerBulletPrefab;
+
+    private readonly Shooter _shooter = new();
+    private Pool<Bullet> _bulletPool;
 
     private void Awake()
     {
-        _shooter.InitBulletPool(_bulletPool);
+        _bulletPool = new Pool<Bullet>(_playerBulletPrefab);
+        _shooter.SetBulletPool(_bulletPool);
     }
 
     private void OnEnable()
@@ -27,12 +30,10 @@ public class Player : MonoBehaviour
 
     private void OnJumpButtonPressed()
     {
-        _tosser.Toss();
+        _tosser.Jump();
         _rotator.RotateUp();
     }
 
-    private void OnShotButtonPressed()
-    {
-        _shooter.Shoot();
-    }
+    private void OnShotButtonPressed() =>
+        _shooter.Shoot(transform);
 }

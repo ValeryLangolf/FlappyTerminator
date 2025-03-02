@@ -3,14 +3,15 @@ using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
 {
-    [SerializeField] private EnemyPool _enemyPool;
-    [SerializeField] private EnemyBulletPool _bulletPool;
+    [SerializeField] private Enemy _enemyPrefab;
+    [SerializeField] private EnemyBullet _enemyBulletPrefab;
     [SerializeField] private SpawnPoint _spawnPointUp;
     [SerializeField] private SpawnPoint _spawnPointDown;
     [SerializeField] private float _delayInSeconds;
 
+    private Pool<Enemy> _enemyPool;
+    private Pool<Bullet> _enemyBulletPool;
     private WaitForSeconds _wait;
-    private Coroutine _coroutine;
     private Vector2 _direction = Vector2.left;
     private bool _isSpawn;
 
@@ -25,18 +26,29 @@ public class EnemySpawner : MonoBehaviour
         _positionX = _spawnPointUp.transform.position.x;
         _minimumPositionY = _spawnPointDown.transform.position.y;
         _maximumPositionY = _spawnPointUp.transform.position.y;
+
+        _enemyBulletPool = new Pool<Bullet>(_enemyBulletPrefab);
+
+        _enemyPool = new Pool<Enemy>(
+            prefab: _enemyPrefab,
+            initializeCallback: enemy => enemy.InitBulletPool(_enemyBulletPool));
     }
 
     private void OnEnable()
     {
         _isSpawn = true;
-        _coroutine = StartCoroutine(SpawnOverTime());
+        StartCoroutine(SpawnOverTime());
     }
 
-    private void OnDisable()
+    private void Spawn()
     {
-        _isSpawn = false;
-        StopCoroutine(_coroutine);
+        Enemy enemy = _enemyPool.Get();
+
+        float positionY = Random.Range(_minimumPositionY, _maximumPositionY);
+        Vector2 position = new(_positionX, positionY);
+
+        enemy.SetPosition(position);
+        enemy.SetDirection(_direction);
     }
 
     private IEnumerator SpawnOverTime()
@@ -45,14 +57,7 @@ public class EnemySpawner : MonoBehaviour
         {
             yield return _wait;
 
-            Enemy enemy = _enemyPool.Get();
-
-            float positionY = Random.Range(_minimumPositionY, _maximumPositionY);
-            enemy.transform.position = new Vector2(_positionX, positionY);
-
-            enemy.InitBulletPool(_bulletPool);
-            enemy.SetDirection(_direction);
-            enemy.gameObject.SetActive(true);
+            Spawn();
         }
     }
 }

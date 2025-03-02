@@ -6,13 +6,9 @@ public class Mover : MonoBehaviour
 
     private Vector3 _direction;
 
-    public void SetDirection(Vector3 direction)
-    {
-        _direction = direction;
-    }
-
-    private void Update()
-    {
+    private void Update() =>
         transform.position += _speed * Time.deltaTime * _direction;
-    }
+
+    public void SetDirection(Vector3 direction) =>
+        _direction = direction;
 }
